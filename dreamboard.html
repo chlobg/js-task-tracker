@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Dream Board</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="dream">
+      <h1 class="dream__title">My Dream Board</h1>
+
+      <form id="dreamForm" class="dream__form">
+        <input
+          type="text"
+          id="dreamInput"
+          class="dream__input"
+          placeholder="Write your dream..."
+          required
+        />
+        <button type="submit" class="dream__button">Add</button>
+      </form>
+
+      <ul id="dreamList" class="dream__list"></ul>
+
+      <div class="dream__quote">
+        <h2 class="dream__quote-title">Inspirational Quote</h2>
+        <p id="quoteText" class="dream__quote-text">Loading...</p>
+      </div>
+    </div>
+
+    <script src="js/bream-board.js"></script>
+    <img
+      src="asssets/icons/tracker__icon--motivation.jpg"
+      alt="Motivation icon"
+      class="dream__icon"
+    />
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Tracker</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <img src="assets/icons/app-icon.svg" alt="Icon" class="header__icon" />
+        <h1 class="header__title">Task Tracker</h1>
+        <button class="header__toggle-theme">🌙</button>
+      </header>
+
+      <main class="main">
+        <section class="add-task">
+          <h2>Add New Task</h2>
+          <input type="text" placeholder="Enter task name..." id="taskInput" />
+          <input type="date" id="dateInput" />
+          <button id="addBtn">Add Task</button>
+        </section>
+
+        <section class="filters">
+          <input type="text" placeholder="Search tasks..." id="searchInput" />
+          <select id="filterStatus">
+            <option>All Tasks</option>
+            <option>Completed</option>
+            <option>Incomplete</option>
+          </select>
+          <select id="sortOrder">
+            <option>Newest First</option>
+            <option>Oldest First</option>
+            <option>A-Z</option>
+          </select>
+        </section>
+
+        <section class="tasks">
+          <h2>Your Tasks</h2>
+          <p id="taskSummary">0 tasks • 0 completed • 0 incomplete</p>
+          <ul id="taskList" class="task-list">
+            <li class="task-list__empty">
+              <img src="assets/icons/empty.svg" alt="Empty" />
+              <p>No tasks yet</p>
+              <small>Get started by adding your first task above!</small>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+
+    <script src="dream-board.js"></script>
+  </body>
+</html>
