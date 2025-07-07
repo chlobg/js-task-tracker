@@ -6,62 +6,90 @@
     <title>Task Tracker</title>
     <link rel="stylesheet" href="css/main.css" />
   </head>
-  <body>
-    <div class="app">
-      <header class="header">
-        <div class="header__container">
+  <body class="app">
+    <header class="header">
+      <div class="header__container">
+        <img
+          src="asssets\icons\tracker__icon--logo.png"
+          alt="Logo"
+          class="header__icon"
+        />
+        <button class="header__toggle-theme">
           <img
-            src="asssets\icons\tracker__icon--logo.png"
-            alt="Icon"
+            src="asssets\icons\tracker__icon--theme.png"
+            alt="Theme toggle"
             class="header__icon"
           />
+        </button>
+      </div>
+    </header>
 
-          <button class="header__toggle-theme">
-            <img
-              src="asssets\icons\tracker__icon--theme.png"
-              alt="Icon"
-              class="header__icon"
+    <main class="main">
+      <section class="section section--add">
+        <div class="section__container">
+          <h2 class="section__title">Add New Task</h2>
+          <div class="section__form">
+            <input
+              type="text"
+              placeholder="Enter task name..."
+              id="taskInput"
+              class="section__input"
             />
-          </button>
+            <input type="date" id="dateInput" class="section__input" />
+            <button id="addBtn" class="section__button">Add Task</button>
+          </div>
         </div>
-      </header>
+      </section>
 
-      <main class="main">
-        <section class="add-task">
-          <h2>Add New Task</h2>
-          <input type="text" placeholder="Enter task name..." id="taskInput" />
-          <input type="date" id="dateInput" />
-          <button id="addBtn">Add Task</button>
-        </section>
+      <section class="section section--filters">
+        <div class="section__container">
+          <div class="section__filters">
+            <div class="section__search">
+              <img src="asssets\icons\tracker__icon--search.png" alt="Search" />
+              <input
+                type="text"
+                placeholder="Search tasks..."
+                id="searchInput"
+              />
+            </div>
 
-        <section class="filters">
-          <input type="text" placeholder="Search tasks..." id="searchInput" />
-          <select id="filterStatus">
-            <option>All Tasks</option>
-            <option>Completed</option>
-            <option>Incomplete</option>
-          </select>
-          <select id="sortOrder">
-            <option>Newest First</option>
-            <option>Oldest First</option>
-            <option>A-Z</option>
-          </select>
-        </section>
+            <select id="filterStatus">
+              <option>All Tasks</option>
+              <option>Completed</option>
+              <option>Incomplete</option>
+            </select>
 
-        <section class="tasks">
-          <h2>Your Tasks</h2>
-          <p id="taskSummary">0 tasks • 0 completed • 0 incomplete</p>
+            <select id="sortOrder">
+              <option>Newest First</option>
+              <option>Oldest First</option>
+              <option>A-Z</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--tasks">
+        <div class="section__container">
+          <h2 class="section__title">Your Tasks</h2>
+          <p id="taskSummary" class="section__summary">
+            0 tasks • 0 completed • 0 incomplete
+          </p>
+
           <ul id="taskList" class="task-list">
             <li class="task-list__empty">
-              <img src="assets/icons/empty.svg" alt="Empty" />
+              <img
+                src="asssets/icons/tracker__icon--notes.png"
+                alt="No tasks"
+              />
               <p>No tasks yet</p>
               <small>Get started by adding your first task above!</small>
             </li>
           </ul>
-        </section>
-      </main>
-    </div>
+        </div>
+      </section>
+    </main>
 
     <script src="dream-board.js"></script>
+    <script src="js\task-tracker.js"></script>
   </body>
 </html>

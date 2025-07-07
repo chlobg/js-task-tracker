@@ -1,12 +1,14 @@
-$bg-dark: #0d1117;
-$card: #161b22;
-$text: #c9d1d9;
-$accent: #3b82f6;
-$border: #30363d;
-$input-bg: #21262d;
-
-$font-main: "Segoe UI", sans-serif;
+$primary: #3b82f6;
+$accent: $primary;
+$white: #ffffff;
+$text: #f1f5f9;
+$placeholder: #94a3b8;
+$background: #0f172a;
+$card: #1e293b;
+$input-bg: #334155;
+$grey: #64748b;
+$grey-light: #cbd5e1;
 
 $radius: 12px;
-$padding: 24px;
-$gap: 16px;
+$radius-sm: 6px;
+$font-main: "Poppins", sans-serif;
