@@ -37,7 +37,7 @@ dreamForm.addEventListener("submit", (e) => {
 });
 
 function loadQuote() {
-  quoteText.textContent = `"if you can think about it, you can become it"`;
+  quoteText.textContent = `"if you can think about it, you can become it."`;
 }
 
 loadDreams();

@@ -1,15 +1,18 @@
 @use "variables" as *;
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px;
   background: $card;
-  border-radius: 12px;
 
-  &__icon {
+  /* &__icon {
     width: 32px;
+  }*/
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    border-radius: 12px;
   }
 
   &__title {
