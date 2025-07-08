@@ -1,3 +1,5 @@
+/* DARK MODE */
+
 $primary: #3b82f6;
 $accent: $primary;
 $white: #ffffff;
@@ -8,6 +10,22 @@ $card: #1e293b;
 $input-bg: #334155;
 $grey: #64748b;
 $grey-light: #cbd5e1;
+
+/* LIGHT MODE 
+
+
+$primary: #3b82f6; //OK
+$accent: $primary; //OK
+$white: #ffffff;
+$text: #f1f5f9; // #0f172a;
+$placeholder: #94a3b8; //OK
+$background: #0f172a; // #64748b;
+$card: #1e293b; // #ffffff;
+$input-bg: #334155;
+$grey: #64748b; // OK
+$grey-light: #cbd5e1; */
+
+/* ALL MODES */
 
 $radius: 12px;
 $radius-sm: 6px;

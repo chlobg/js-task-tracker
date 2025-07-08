@@ -7,6 +7,7 @@ const taskSummary = document.getElementById("taskSummary");
 const searchInput = document.getElementById("searchInput");
 const filterStatus = document.getElementById("filterStatus");
 const sortOrder = document.getElementById("sortOrder");
+const toggleBtn = document.getElementById("toggle-theme");
 
 // ========== Data ==========
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -128,6 +129,16 @@ function updateSummary(total, completed, remaining) {
     taskSummary.textContent = `${total} tasks • ${completed} completed • ${remaining} incomplete`;
   }
 }
+
+// Load theme on page load
+if (localStorage.getItem("theme") === "light") {
+  document.body.classList.add("light-mode");
+}
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("light-mode");
+  const islight = document.body.classList.contains("light-mode");
+  localStorage.setItem("theme", islight ? "light" : "light");
+});
 
 // ========== Init ==========
 renderTasks();
