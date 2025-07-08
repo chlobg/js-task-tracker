@@ -61,7 +61,7 @@ function renderTasks() {
   if (sorted.length === 0) {
     taskList.innerHTML = `
 <li class="task-list__empty">
-<img src="assets/icons/tracker__icon--notes.png" alt="Empty" />
+<img src="asssets/icons/tracker__icon--notes.svg" alt="Empty" />
 <p>No tasks yet</p>
 <small>Get started by adding your first task above!</small>
 </li>`;
