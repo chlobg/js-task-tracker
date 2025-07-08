@@ -131,13 +131,13 @@ function updateSummary(total, completed, remaining) {
 }
 
 // Load theme on page load
-if (localStorage.getItem("theme") === "light") {
-  document.body.classList.add("light-mode");
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark-mode");
 }
 toggleBtn.addEventListener("click", () => {
-  document.body.classList.toggle("light-mode");
-  const islight = document.body.classList.contains("light-mode");
-  localStorage.setItem("theme", islight ? "light" : "light");
+  document.body.classList.toggle("dark-mode");
+  const isdark = document.body.classList.contains("dark-mode");
+  localStorage.setItem("theme", isdark ? "dark" : "dark");
 });
 
 // ========== Init ==========
