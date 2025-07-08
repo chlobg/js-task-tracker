@@ -47,6 +47,11 @@ function saveTasks() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
+function formatDate(dateStr) {
+  const options = { year: "numeric", month: "numeric", day: "numeric" };
+  return new Date(dateStr).toLocaleDateString("en-US", options);
+}
+
 function renderTasks() {
   const filtered = getFilteredTasks();
   const sorted = getSortedTasks(filtered);
@@ -55,11 +60,11 @@ function renderTasks() {
 
   if (sorted.length === 0) {
     taskList.innerHTML = `
-      <li class="task-list__empty">
-        <img src="asssets/icons/tracker__icon--notes.png" alt="Empty" />
-        <p>No tasks yet</p>
-        <small>Get started by adding your first task above!</small>
-      </li>`;
+<li class="task-list__empty">
+<img src="assets/icons/tracker__icon--notes.png" alt="Empty" />
+<p>No tasks yet</p>
+<small>Get started by adding your first task above!</small>
+</li>`;
     updateSummary(0, 0, 0);
     return;
   }
@@ -79,12 +84,19 @@ function renderTasks() {
       renderTasks();
     });
 
-    const span = document.createElement("span");
-    span.textContent = `${task.name} ${task.date ? `(${task.date})` : ""}`;
+    const nameSpan = document.createElement("span");
+    nameSpan.textContent = task.name;
     if (task.done) {
-      span.style.textDecoration = "line-through";
+      nameSpan.style.textDecoration = "line-through";
       completed++;
     }
+
+    const dueSpan = document.createElement("span");
+    dueSpan.textContent = `Due ${formatDate(task.date)}`;
+    dueSpan.className =
+      new Date(task.date) < new Date()
+        ? "task__due-date--past"
+        : "task__due-date--future";
 
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "✖";
@@ -94,7 +106,7 @@ function renderTasks() {
       renderTasks();
     });
 
-    li.append(checkbox, span, deleteBtn);
+    li.append(checkbox, nameSpan, dueSpan, deleteBtn);
     taskList.appendChild(li);
   });
 

@@ -148,6 +148,22 @@ $grey-light: #cbd5e1; */
   margin-top: 8px;
   color: #94a3b8;
 }
+.section .task__due-date--past {
+  background-color: #ff0000;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-left: 10px;
+}
+.section .task__due-date--future {
+  background-color: #008000;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-left: 10px;
+}
 @media (max-width: 1040px) {
   .section .section__form,
   .section .section__filters {

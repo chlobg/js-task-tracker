@@ -157,6 +157,24 @@
     }
   }
 
+  .task__due-date--past {
+    background-color: #ff0000;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    margin-left: 10px;
+  }
+
+  .task__due-date--future {
+    background-color: #008000;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    margin-left: 10px;
+  }
+
   @media (max-width: 1040px) {
     .section__form,
     .section__filters {
