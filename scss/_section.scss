@@ -7,7 +7,7 @@
   margin: 0 48px;
   border: 1px solid var(--grey-light);
 
-  p{
+  p {
     color: var(--text-light);
   }
   &__title {
@@ -67,7 +67,6 @@
       font-size: 16px;
       border: 1px solid $grey-light;
       text-align: left;
-
     }
 
     #dateInput {
@@ -188,36 +187,207 @@
     margin-left: 10px;
   }
 
-  @media (max-width: 1040px) {
+  .dark-mode {
+    .section {
+      background-color: var(--card-dark);
+      border-radius: $radius;
+      padding: 24px;
+      margin: 0 48px;
+      border: 1px solid var(--grey-light);
 
-    .section__form,
-    .section__filters {
-      flex-direction: column;
+      p {
+        color: var(--text-dark);
+      }
+      &__title {
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--text-dark);
+        margin-bottom: 10px;
+        text-align: left;
+      }
+
+      &__input {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+
+        input,
+        select {
+          padding: 12px;
+          border: none;
+          border-radius: 8px;
+          background-color: var(--placeholder);
+          color: var(--text-dark);
+          font-size: 16px;
+          flex: 1;
+        }
+
+        input::placeholder {
+          color: $placeholder;
+        }
+      }
+
+      &__button {
+        background-color: $accent;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 12px 24px;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #2563eb;
+        }
+      }
+
+      .section__form {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+
+        input {
+          flex: 1;
+          padding: 12px;
+          // background-color: $input-bg;
+          border: none;
+          border-radius: 8px;
+          font-size: 16px;
+          border: 1px solid $grey-light;
+          text-align: left;
+        }
+
+        #dateInput {
+          max-width: 174px;
+        }
+
+        input::placeholder {
+          color: $placeholder;
+        }
+
+        button {
+          padding: 12px 20px;
+          border: none;
+          border-radius: 8px;
+          background-color: $accent;
+          color: white;
+          font-weight: 600;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #2563eb;
+          }
+        }
+      }
+
+      .section__filters {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+
+        select {
+          padding: 12px;
+          border: none;
+          border-radius: 8px;
+          background-color: var(--card-light);
+          font-size: 16px;
+          border: 1px solid $grey-light;
+        }
+      }
+
+      .section__search {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        background-color: var(--card-light);
+        border-radius: 8px;
+        padding: 0 12px;
+        border: 1px solid $grey-light;
+        text-align: left;
+
+        img {
+          width: 20px;
+          margin-right: 8px;
+          opacity: 0.7;
+        }
+
+        input {
+          flex: 1;
+          padding: 12px 0;
+          border: none;
+          background: none;
+          color: $text;
+          font-size: 16px;
+          text-align: left;
+
+          &::placeholder {
+            color: $placeholder;
+          }
+        }
+      }
+
+      .task-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-top: 16px;
+
+        &__empty {
+          text-align: center;
+          opacity: 0.5;
+          padding: 40px 0;
+
+          img {
+            width: 60px;
+            margin-bottom: 12px;
+          }
+
+          p {
+            font-weight: 600;
+            font-size: 18px;
+          }
+
+          small {
+            display: block;
+            font-size: 14px;
+            margin-top: 8px;
+            color: var(--text-light);
+          }
+        }
+      }
     }
 
-    .section__filters input,
-    .section__filters select {
-      width: 100%;
-    }
-  }
+    @media (max-width: 1040px) {
+      .section__form,
+      .section__filters {
+        flex-direction: column;
+      }
 
-  @media (max-width: 430px) {
-    .section__title {
-      font-size: 18px;
-    }
-
-    .section__form input,
-    .section__form button {
-      width: 100%;
+      .section__filters input,
+      .section__filters select {
+        width: 100%;
+      }
     }
 
-    .section__filters {
-      flex-direction: column;
-      gap: 8px;
-    }
+    @media (max-width: 430px) {
+      .section__title {
+        font-size: 18px;
+      }
 
-    .section__search {
-      width: 100%;
+      .section__form input,
+      .section__form button {
+        width: 100%;
+      }
+
+      .section__filters {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .section__search {
+        width: 100%;
+      }
     }
   }
 }
