@@ -7,25 +7,18 @@
   --white: #ffffff;
   --text: #f1f5f9;
   --placeholder: #94a3b8;
-  --background: #0f172a;
+  --background-dark: #111827;
   --card: #1e293b;
   --input-bg: #334155;
   --grey: #64748b;
   --grey-light: #cbd5e1;
   --background-light: #f9fafb;
   --card-light: #ffffff;
+  --text-light: #111827;
+  --card-dark: #1f2937;
 }
 
 body.dark-mode {
-  --primary: #3b82f6;
-  --white: #ffffff;
-  --text: #0f172a;
-  --placeholder: #94a3b8;
-  --background: #cbd5e1;
-  --card: #64748b;
-  --input-bg: white;
-  --grey: #64748b;
-  --grey-light: #cbd5e1;
   /*
 
   $primary: #3b82f6; //OK
@@ -55,15 +48,19 @@ $grey: #64748b; // OK
 $grey-light: #cbd5e1; */
 /* ALL MODES */
 .section {
-  background-color: var(--card);
+  background-color: var(--card-light);
   border-radius: 12px;
   padding: 24px;
   margin: 0 48px;
+  border: 1px solid var(--grey-light);
+}
+.section p {
+  color: var(--text-light);
 }
 .section__title {
   font-size: 20px;
   font-weight: 600;
-  color: var(--white);
+  color: var(--text-light);
   margin-bottom: 10px;
   text-align: left;
 }
@@ -81,6 +78,9 @@ $grey-light: #cbd5e1; */
   color: var(--text);
   font-size: 16px;
   flex: 1;
+}
+.section__input input::-moz-placeholder {
+  color: var(--placeholder);
 }
 .section__input input::placeholder {
   color: var(--placeholder);
@@ -105,11 +105,17 @@ $grey-light: #cbd5e1; */
 .section .section__form input {
   flex: 1;
   padding: 12px;
-  background-color: var(--input-bg);
   border: none;
   border-radius: 8px;
-  color: var(--text);
   font-size: 16px;
+  border: 1px solid var(--grey-light);
+  text-align: left;
+}
+.section .section__form #dateInput {
+  max-width: 174px;
+}
+.section .section__form input::-moz-placeholder {
+  color: var(--placeholder);
 }
 .section .section__form input::placeholder {
   color: var(--placeholder);
@@ -136,17 +142,19 @@ $grey-light: #cbd5e1; */
   padding: 12px;
   border: none;
   border-radius: 8px;
-  background-color: var(--input-bg);
-  color: var(--text);
+  background-color: var(--card-light);
   font-size: 16px;
+  border: 1px solid var(--grey-light);
 }
 .section .section__search {
   display: flex;
   align-items: center;
   flex: 1;
-  background-color: var(--input-bg);
+  background-color: var(--card-light);
   border-radius: 8px;
   padding: 0 12px;
+  border: 1px solid var(--grey-light);
+  text-align: left;
 }
 .section .section__search img {
   width: 20px;
@@ -160,6 +168,10 @@ $grey-light: #cbd5e1; */
   background: none;
   color: var(--text);
   font-size: 16px;
+  text-align: left;
+}
+.section .section__search input::-moz-placeholder {
+  color: var(--placeholder);
 }
 .section .section__search input::placeholder {
   color: var(--placeholder);
@@ -187,7 +199,7 @@ $grey-light: #cbd5e1; */
   display: block;
   font-size: 14px;
   margin-top: 8px;
-  color: var(--placeholder);
+  color: var(--text-light);
 }
 .section .task__due-date--past {
   background-color: #ff0000;
@@ -254,6 +266,10 @@ body {
   border-radius: var(--radius);
 }
 
+.app.dark-mode {
+  background-color: var(--background-dark);
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -279,6 +295,26 @@ body {
   padding: 16px 24px;
   margin: 20px;
 }
+.header .header__logo {
+  display: flex;
+  color: #111827;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  gap: 12px;
+}
+.header .header__logo .header__icon {
+  background-color: #3b82f6;
+  border-radius: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header .header__logo svg {
+  stroke: #FFFFFF;
+}
 .header__container {
   display: flex;
   justify-content: space-between;
@@ -289,21 +325,20 @@ A .header__branding {
   align-items: center;
   gap: 12px;
 }
-.header__logo {
-  width: 32px;
-  height: 32px;
-}
 .header__title {
   font-size: 20px;
   font-weight: 600;
   color: var(--text);
 }
 .header__toggle {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: #f3f4f6;
   border: none;
   padding: 8px;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
+}
+.header__toggle svg {
+  color: #4b5563;
 }
 .header__toggle:hover {
   background-color: rgba(255, 255, 255, 0.1);
@@ -319,4 +354,15 @@ A .header__branding {
   }
 }
 
-/*# sourceMappingURL=main.css.map */
+.dark-mode .header {
+  background-color: var(--card-dark);
+}
+.dark-mode .header .header__logo {
+  color: var(--text);
+}
+.dark-mode .header .header__toggle {
+  background-color: #374151;
+}
+.dark-mode .header .header__toggle svg {
+  color: #9ca3af;
+}/*# sourceMappingURL=main.css.map */
