@@ -18,18 +18,18 @@
   --card-dark: #1f2937;
 }
 
-body.dark-mode {
-  // --primary: #3b82f6;
-  // --white: #ffffff;
-  // --text: #0f172a;
-  // --placeholder: #111827;
-  // --background: #cbd5e1;
-  // --card: #64748b;
-  // --input-bg: white;
-  // --grey: #64748b;
-  // --grey-light: #cbd5e1;
+//body.dark-mode {
+// --primary: #3b82f6;
+// --white: #ffffff;
+// --text: #0f172a;
+// --placeholder: #111827;
+// --background: #cbd5e1;
+// --card: #64748b;
+// --input-bg: white;
+// --grey: #64748b;
+// --grey-light: #cbd5e1;
 
-  /*
+/*
 
 $primary: #3b82f6; //OK
 $accent: $primary; //OK
@@ -41,7 +41,7 @@ $card: #1e293b; // #ffffff;
 $input-bg: #334155;
 $grey: #64748b; // OK
 $grey-light: #cbd5e1; */
-}
+//}
 
 $primary: var(--primary);
 $accent: $primary;
