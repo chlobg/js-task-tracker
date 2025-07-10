@@ -72,13 +72,16 @@ function renderTasks() {
   }
 
   let completed = 0;
-
   sorted.forEach((task) => {
     const li = document.createElement("li");
     li.className = "task-list__item";
 
+    const left = document.createElement("div");
+    left.className = "task-list__left";
+
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
+    checkbox.className = "task-list__checkbox";
     checkbox.checked = task.done;
     checkbox.addEventListener("change", () => {
       task.done = checkbox.checked;
@@ -86,29 +89,59 @@ function renderTasks() {
       renderTasks();
     });
 
-    const nameSpan = document.createElement("span");
-    nameSpan.textContent = task.name;
-    if (task.done) {
-      nameSpan.style.textDecoration = "line-through";
-      completed++;
-    }
+    const info = document.createElement("div");
+    info.className = "task__info";
 
-    const dueSpan = document.createElement("span");
-    dueSpan.textContent = `Due ${formatDate(task.date)}`;
-    dueSpan.className =
+    const due = document.createElement("span");
+    due.textContent = `Due ${formatDate(task.date)}`;
+    due.className =
       new Date(task.date) < new Date()
         ? "task__due-date--past"
         : "task__due-date--future";
 
+    const subtitle = document.createElement("div");
+    subtitle.className = "task-list__date";
+    subtitle.textContent = "Added today";
+
+    const title = document.createElement("div");
+    title.className = "task-list__title";
+    title.textContent = task.name;
+
+    // Append title, subtitle, and due date to info container
+    // left.appendChild(checkbox);
+    // left.appendChild(due);
+    // left.appendChild(title);
+    // left.appendChild(subtitle);
+    left.appendChild(checkbox);
+    left.appendChild(info);
+    info.appendChild(title);
+    info.appendChild(due); // avant
+    info.appendChild(subtitle);
+
     const deleteBtn = document.createElement("button");
-    deleteBtn.textContent = "✖";
+    deleteBtn.className = "task-list__delete";
+    deleteBtn.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" 
+           fill="none" viewBox="0 0 24 24" 
+           stroke="currentColor" width="20" height="20">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 
+                 01-1.995-1.858L5 7m5 4v6m4-6v6M9 7V4a1 1 0 
+                 011-1h4a1 1 0 011 1v3m-7 0h8"/>
+      </svg>
+    `;
     deleteBtn.addEventListener("click", () => {
       tasks = tasks.filter((t) => t.id !== task.id);
       saveTasks();
       renderTasks();
     });
 
-    li.append(checkbox, nameSpan, dueSpan, deleteBtn);
+    const right = document.createElement("div");
+    right.className = "task-list__right";
+    right.appendChild(deleteBtn);
+
+    li.appendChild(left);
+    li.appendChild(right);
     taskList.appendChild(li);
   });
 
