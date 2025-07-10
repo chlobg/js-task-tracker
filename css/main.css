@@ -15,10 +15,13 @@
   --text-dark: #f1f5f9;
   --background-dark: #111827;
   --card-dark: #1f2937;
+  --color-light: #ffffff;
+  --color-dark: #374151;
   --card: var(--card-light);
   --text: var(--text-light);
   --background: var(--background-light);
   --border: var(--grey-light);
+  --color: var(--color-light);
 }
 
 body.dark-mode {
@@ -26,6 +29,7 @@ body.dark-mode {
   --background: var(--background-dark);
   --card: var(--card-dark);
   --border: var(--grey);
+  --color: var(--color-dark);
 }
 
 .section {
@@ -88,13 +92,14 @@ body.dark-mode {
   font-size: 16px;
   border: 1px solid var(--border);
   text-align: left;
-  background-color: var(--card);
+  background-color: var(--color);
 }
 .section__form input::placeholder {
   color: var(--placeholder);
 }
 .section__form #dateInput {
   max-width: 174px;
+  color: var(--text);
 }
 .section__form button {
   padding: 12px 20px;
@@ -119,7 +124,7 @@ body.dark-mode {
   color: var(--text);
   border: none;
   border-radius: 8px;
-  background-color: var(--card);
+  background-color: var(--color);
   font-size: 16px;
   border: 1px solid var(--border);
 }
@@ -127,7 +132,7 @@ body.dark-mode {
   display: flex;
   align-items: center;
   flex: 1;
-  background-color: var(--card);
+  background-color: var(--color);
   border-radius: 8px;
   padding: 0 12px;
   border: 1px solid var(--border);
@@ -145,7 +150,7 @@ body.dark-mode {
   color: var(--text);
   font-size: 16px;
   text-align: left;
-  background-color: var(--card);
+  background-color: var(--color);
 }
 .section__search input::placeholder {
   color: var(--placeholder);

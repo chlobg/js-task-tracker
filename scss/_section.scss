@@ -67,7 +67,7 @@
       font-size: 16px;
       border: 1px solid var(--border);
       text-align: left;
-      background-color: var(--card);
+      background-color: var(--color);
 
       &::placeholder {
         color: var(--placeholder);
@@ -76,6 +76,7 @@
 
     #dateInput {
       max-width: 174px;
+      color: var(--text);
     }
 
     button {
@@ -104,7 +105,7 @@
       color: var(--text);
       border: none;
       border-radius: 8px;
-      background-color: var(--card);
+      background-color: var(--color);
       font-size: 16px;
       border: 1px solid var(--border);
     }
@@ -114,7 +115,7 @@
     display: flex;
     align-items: center;
     flex: 1;
-    background-color: var(--card);
+    background-color: var(--color);
     border-radius: 8px;
     padding: 0 12px;
     border: 1px solid var(--border);
@@ -133,7 +134,7 @@
       color: var(--text);
       font-size: 16px;
       text-align: left;
-      background-color: var(--card);
+      background-color: var(--color);
 
       &::placeholder {
         color: var(--placeholder);

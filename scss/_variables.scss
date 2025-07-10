@@ -15,11 +15,14 @@
   --text-dark: #f1f5f9;
   --background-dark: #111827;
   --card-dark: #1f2937;
+  --color-light: #ffffff;
+  --color-dark: #374151;
 
   --card: var(--card-light);
   --text: var(--text-light);
   --background: var(--background-light);
   --border: var(--grey-light);
+  --color: var(--color-light);
 }
 
 $primary: var(--primary);
@@ -38,6 +41,7 @@ body.dark-mode {
   --background: var(--background-dark);
   --card: var(--card-dark);
   --border: var(--grey);
+  --color: var(--color-dark);
 }
 
 $radius: 12px;
