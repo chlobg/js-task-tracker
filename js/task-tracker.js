@@ -8,6 +8,8 @@ const searchInput = document.getElementById("searchInput");
 const filterStatus = document.getElementById("filterStatus");
 const sortOrder = document.getElementById("sortOrder");
 const toggleBtn = document.getElementById("toggle-theme");
+const moonIcon = document.getElementById("moonIcon");
+const sunIcon = document.getElementById("sunIcon");
 
 // ========== Data ==========
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -142,14 +144,22 @@ function updateSummary(total, completed, remaining) {
   }
 }
 
-// Load theme on page load
 if (localStorage.getItem("theme") === "dark") {
   document.body.classList.add("dark-mode");
+  moonIcon.classList.add("hidden");
+  sunIcon.classList.remove("hidden");
+} else {
+  document.body.classList.remove("dark-mode");
+  moonIcon.classList.remove("hidden");
+  sunIcon.classList.add("hidden");
 }
+
 toggleBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
-  const isdark = document.body.classList.contains("dark-mode");
-  localStorage.setItem("theme", isdark ? "dark" : "dark");
+  const isDark = document.body.classList.toggle("dark-mode");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+
+  moonIcon.classList.toggle("hidden", isDark);
+  sunIcon.classList.toggle("hidden", !isDark);
 });
 
 // ========== Init ==========

@@ -1,113 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Tracker</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Task Tracker</title>
-  <link rel="stylesheet" href="scss/main.css" />
-</head>
-
-<body class="app">
-  <header class="header">
-    <div class="header__container">
-      <!-- <img
-          src="asssets\icons\tracker__icon--logo.png"
-          alt="Logo"
-          class="header__icon"
-        /> -->
-      <div class="header__logo">
-        <div class="header__icon">
-          <svg width="20px" height="20px" class="w-5 h-5 text-white" fill="none" stroke="currentColor"
-            viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4">
-            </path>
-          </svg>
-        </div>
-        <div> Task Tracker</div>
-      </div>
-      <!--
-        <button class="header__theme-switch"></button>
-
-        <img
-            src="asssets\icons\tracker__icon--darkmode.svg"
-            alt="Theme toggle"
-            class="header__icon"
-          />
-
-        <img
-            src="asssets\icons\tracker__icon--lightmode.svg"
-            alt="Theme toggle"
-            class="header__icon"
-          />
-        -->
-
-      <button class="header__toggle" id="toggle-theme">
-        <svg width="20px" height="20px" id="moonIcon" class="w-5 h-5 text-gray-600 dark:text-gray-400 block dark:hidden" fill="none"
-          stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-        </svg>
-      </button>
-    </div>
-  </header>
-
-  <main class="main">
-    <section class="section section--add">
-      <div class="section__container">
-        <h2 class="section__title">Add New Task</h2>
-        <div class="section__form">
-          <input type="text" placeholder="Enter task name..." id="taskInput" class="section__input" />
-          <input type="date" id="dateInput" class="section__input" />
-          <button id="addBtn" class="section__button">Add Task</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--filters">
-      <div class="section__container">
-        <div class="section__filters">
-          <div class="section__search">
-            <img src="asssets\icons\tracker__icon--search.png" alt="Search" />
-            <input type="text" placeholder="Search tasks..." id="searchInput" />
+  <body class="app">
+    <header class="header">
+      <div class="header__container">
+        <div class="header__logo">
+          <div class="header__icon">
+            <svg
+              width="20px"
+              height="20px"
+              class="w-5 h-5 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+              ></path>
+            </svg>
           </div>
-
-          <select id="filterStatus">
-            <option>All Tasks</option>
-            <option>Completed</option>
-            <option>Incomplete</option>
-          </select>
-
-          <select id="sortOrder">
-            <option>Newest First</option>
-            <option>Oldest First</option>
-            <option>A-Z</option>
-          </select>
+          <div>Task Tracker</div>
         </div>
+
+        <button class="header__toggle" id="toggle-theme">
+          <svg
+            id="moonIcon"
+            class="theme-icon"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646
+         9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+            />
+          </svg>
+
+          <svg
+            id="sunIcon"
+            class="theme-icon hidden"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 3v1m0 16v1m8.66-11.66l-.707.707M4.34
+         19.66l-.707-.707M21 12h1M2 12H1m3.64-7.64l.707.707M19.66
+         19.66l-.707-.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+            />
+          </svg>
+        </button>
       </div>
-    </section>
+    </header>
 
-    <section class="section section--tasks">
-      <div class="section__container">
-        <h2 class="section__title">Your Tasks</h2>
-        <p id="taskSummary" class="section__summary">
-          0 tasks • 0 completed • 0 incomplete
-        </p>
+    <main class="main">
+      <section class="section section--add">
+        <div class="section__container">
+          <h2 class="section__title">Add New Task</h2>
+          <div class="section__form">
+            <input
+              type="text"
+              placeholder="Enter task name..."
+              id="taskInput"
+              class="section__input"
+            />
+            <input type="date" id="dateInput" class="section__input" />
+            <button id="addBtn" class="section__button">Add Task</button>
+          </div>
+        </div>
+      </section>
 
-        <ul id="taskList" class="task-list">
-          <li class="task-list__empty">
-            <img src="asssets\icons\tracker__icon--notes.svg" alt="No tasks" />
-            <p>No tasks yet</p>
-            <small>Get started by adding your first task above!</small>
-          </li>
-        </ul>
-      </div>
-    </section>
-  </main>
+      <section class="section section--filters">
+        <div class="section__container">
+          <div class="section__filters">
+            <div class="section__search">
+              <img src="asssets\icons\tracker__icon--search.png" alt="Search" />
+              <input
+                type="text"
+                placeholder="Search tasks..."
+                id="searchInput"
+              />
+            </div>
 
-  <script src="dream-board.js"></script>
-  <script src="js\task-tracker.js"></script>
-</body>
+            <select id="filterStatus">
+              <option>All Tasks</option>
+              <option>Completed</option>
+              <option>Incomplete</option>
+            </select>
 
+            <select id="sortOrder">
+              <option>Newest First</option>
+              <option>Oldest First</option>
+              <option>A-Z</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--tasks">
+        <div class="section__container">
+          <h2 class="section__title">Your Tasks</h2>
+          <p id="taskSummary" class="section__summary">
+            0 tasks • 0 completed • 0 incomplete
+          </p>
+
+          <ul id="taskList" class="task-list">
+            <li class="task-list__empty">
+              <img
+                src="asssets\icons\tracker__icon--notes.svg"
+                alt="No tasks"
+              />
+              <p>No tasks yet</p>
+              <small>Get started by adding your first task above!</small>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <script src="dream-board.js"></script>
+    <script src="js\task-tracker.js"></script>
+  </body>
 </html>

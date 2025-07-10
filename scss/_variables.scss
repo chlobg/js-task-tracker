@@ -1,4 +1,3 @@
-/* DARK MODE */
 :root {
   --font-main: "Inter", sans-serif;
   --radius: 8px;
@@ -16,32 +15,12 @@
   --text-dark: #f1f5f9;
   --background-dark: #111827;
   --card-dark: #1f2937;
+
+  --card: var(--card-light);
+  --text: var(--text-light);
+  --background: var(--background-light);
+  --border: var(--grey-light);
 }
-
-//body.dark-mode {
-// --primary: #3b82f6;
-// --white: #ffffff;
-// --text: #0f172a;
-// --placeholder: #111827;
-// --background: #cbd5e1;
-// --card: #64748b;
-// --input-bg: white;
-// --grey: #64748b;
-// --grey-light: #cbd5e1;
-
-/*
-
-$primary: #3b82f6; //OK
-$accent: $primary; //OK
-$white: #ffffff;
-$text: #f1f5f9; // #0f172a;
-$placeholder: #94a3b8; //OK
-$background: #0f172a; // #64748b;
-$card: #1e293b; // #ffffff;
-$input-bg: #334155;
-$grey: #64748b; // OK
-$grey-light: #cbd5e1; */
-//}
 
 $primary: var(--primary);
 $accent: $primary;
@@ -54,21 +33,12 @@ $input-bg: var(--input-bg);
 $grey: var(--grey);
 $grey-light: var(--grey-light);
 
-/* LIGHT MODE 
-
-
-$primary: #3b82f6; //OK
-$accent: $primary; //OK
-$white: #ffffff;
-$text: #f1f5f9; // #0f172a;
-$placeholder: #94a3b8; //OK
-$background: #0f172a; // #64748b;
-$card: #1e293b; // #ffffff;
-$input-bg: #334155;
-$grey: #64748b; // OK
-$grey-light: #cbd5e1; */
-
-/* ALL MODES */
+body.dark-mode {
+  --text: var(--text-dark);
+  --background: var(--background-dark);
+  --card: var(--card-dark);
+  --border: var(--grey);
+}
 
 $radius: 12px;
 $radius-sm: 6px;
